@@ -16,7 +16,8 @@ header {
   height: auto;
   padding: 12px 28px;
   width: 100%;
-  border-bottom: solid 1px rgb(95, 95, 95);
+  background-color: rgb(233, 233, 233);
+  
 }
 
 h1 {

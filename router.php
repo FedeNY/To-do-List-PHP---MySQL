@@ -1,7 +1,7 @@
 <?php
 
-require_once './app/task.php';
-
+include_once 'app/task.php';
+include_once 'app/controller/task-controller.php';
 
 
 define('BASE_URL', 'http://' . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']));
@@ -31,16 +31,22 @@ $params = explode('/', $action);
 switch ($params[0]) {
 
     case 'listar':
-        showTask();
+        $controller = new TaskController();
+        $controller->showTask();
         break;
     case 'add':
-        addTask();
+        $controller = new TaskController();
+        $controller->addTask();
         break;
     case 'delete':
-        removeTask($params[1]);
+
+        $controller = new TaskController();
+        $controller->removeTask($params[1]);
+
         break;
     case 'finish':
-        updateTask($params[1]);
+        $controller = new TaskController();
+        $controller->updateTask($params[1]);
         break;
 
     default:
